@@ -1,20 +1,28 @@
 $(document).ready(function(){
     
-    
-    $.getJSON( "http://localhost:3000/scrape", function( intern ) {
+    $('#go').click(function(){
+        var type = $('#type').val(),location = $('#location').val();
+        if(type === '' && location === ''){
+            $('#error').html('Enter the title and location!');
+        }else{
+            $.getJSON( `http://localhost:3000/scrape?type=${type}&location=${location}`, function( intern ) {
 
-        $('.ninternshalla').html(intern.internshala.internships.length);
-        $('.nletsintern').html(intern.letsintern.internships.length);
-        $('.nintern').html(0);
-        
-     for(var ele in intern.internshala.internships){
-       $('.internshalla-internship-list').append(`<hr><div class="individual-internship"><div class="internship-header"><p class="title">${intern.internshala.internships[ele].header.title}</p><p class="company">${intern.internshala.internships[ele].header.company}</p><p class="location">${intern.internshala.internships[ele].header.location}</p> </div><div class="internship-body"><div class="stipend">${intern.internshala.internships[ele].detials.stipend}</div><div class="apply-by">${intern.internshala.internships[ele].detials.apply_by}</div><div class="start">${intern.internshala.internships[ele].detials.start_date}</div></div><div class="internship-footer"><div class="view">View</div><div class="visit">Visit</div></div></div>`);
-     }
-    
-       for(var ele in intern.letsintern.internships){
-        $('.letsintern-internship-list').append(`<hr><div class="individual-internship"><div class="internship-header"><p class="title">${intern.letsintern.internships[ele].header.title}</p><p class="company">${intern.letsintern.internships[ele].header.company}</p><p class="location">${intern.letsintern.internships[ele].header.location}</p> </div><div class="internship-body"><div class="stipend">${intern.letsintern.internships[ele].detials.stipend}</div><div class="apply-by">${intern.letsintern.internships[ele].detials.apply_by}</div><div class="start">${intern.letsintern.internships[ele].detials.start_date}</div></div><div class="internship-footer"><div class="view">View</div><div class="visit">Visit</div></div></div>`);
-     }
+                $('.ninternshalla').html(intern.internshala.internships.length);
+                $('.nletsintern').html(intern.letsintern.internships.length);
+                $('.nintern').html(0);
+                $('.internshalla-internship-list').html('');
+                $('.letsintern-internship-list').html('');
+             for(var ele in intern.internshala.internships){
+               $('.internshalla-internship-list').append(`<hr><div class="individual-internship"><div class="internship-header"><p class="title">${intern.internshala.internships[ele].header.title}</p><p class="company">${intern.internshala.internships[ele].header.company}</p><p class="location">${intern.internshala.internships[ele].header.location}</p> </div><div class="internship-body"><div class="stipend">${intern.internshala.internships[ele].detials.stipend}</div><div class="apply-by">${intern.internshala.internships[ele].detials.apply_by}</div><div class="start">${intern.internshala.internships[ele].detials.start_date}</div></div><div class="internship-footer"><div class="view">View</div><div class="visit">Visit</div></div></div>`);
+             }
+            
+               for(var ele in intern.letsintern.internships){
+                $('.letsintern-internship-list').append(`<hr><div class="individual-internship"><div class="internship-header"><p class="title">${intern.letsintern.internships[ele].header.title}</p><p class="company">${intern.letsintern.internships[ele].header.company}</p><p class="location">${intern.letsintern.internships[ele].header.location}</p> </div><div class="internship-body"><div class="stipend">${intern.letsintern.internships[ele].detials.stipend}</div><div class="apply-by">${intern.letsintern.internships[ele].detials.apply_by}</div><div class="start">${intern.letsintern.internships[ele].detials.start_date}</div></div><div class="internship-footer"><div class="view">View</div><div class="visit">Visit</div></div></div>`);
+             }
+            });
+        }
     });
+    
 
      $('.intern').click(function(){
         $('.yes').addClass('no');
@@ -42,8 +50,6 @@ $(document).ready(function(){
         $('.present').removeClass('present');
         $('.letsintern-internship-list').addClass('present');
      });
-        
-        
     
     
 });

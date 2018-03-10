@@ -12,10 +12,11 @@ app.get('/',(req,res)=>{
 });
 
 app.get('/scrape',(req,res)=>{
+    var type = req.query.type,location=req.query.location;
     var items = {};
-    var url = 'https://internshala.com/internships/javascript%20development-internship/';
+    var url = `https://internshala.com/internships/keywords-${encodeURIComponent(type+' '+location)}`;
     internship_list_container = [];
-    var url2 = 'http://www.letsintern.com/internships?search=nodejs';
+    var url2 = `http://www.letsintern.com/internships?search=${type+'+'+location}`;
     rp(url).then((html)=>{
         var $ = cheerio.load(html);
         var internship_list_container = [];
