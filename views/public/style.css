@@ -1,0 +1,133 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0; 
+       
+}
+
+body {
+    background: #1488CC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2B32B2, #1488CC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.form {
+    margin: 250px auto;
+    font-size: 20px;
+    font-family: sans-serif;
+    margin-bottom: 0;
+    text-align: center;    
+    
+}
+
+.input {
+    height: 40px;
+    width: 200px;
+    background-color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+    border-radius: 2px;
+    border: none;
+    padding: 5px;
+    margin: 10px;
+    outline: none;
+}
+
+.go{
+    height: 40px;
+    width: 50px;
+    font-family: sans-serif;
+    border-radius: 2px;
+    border: none;
+    padding: 5px;
+    font-size: 20px;
+    background-color: white;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.internship{
+    font-size: 20px;
+    font-family: sans-serif;
+    color: white;    
+}
+
+table {
+    margin: 50px auto 0;
+    text-align: center;   
+}
+
+th,td{
+    padding:8px 70px;
+}
+
+.no:hover{
+    cursor: pointer;
+}
+
+.yes:hover {
+    cursor: default;
+}
+
+.yes {
+    border-bottom: 1px solid white;
+}
+
+hr,.individual-internship{
+    width: 65%;
+    margin: 0 auto;
+}
+
+.individual-internship{
+    padding: 10px
+}
+.internship-header .internship-title{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+
+.internship-header .company{
+    font-size: 12px;
+    padding: 5px;
+}
+
+.internship-header .location{
+    font-size: 15px;
+}
+
+.internship-body {
+    padding: 10px;
+    margin: 0;
+    display: inline-block;
+    width: 100%;
+    /* text-align: center; */
+    margin: 15px 0;
+    font-size: 15px;
+}
+.stipend,.apply-by ,.start{
+    padding-right: 60px;
+    margin: 0;
+    display: inherit;
+}
+
+.internship-footer{
+    display: inline-block;
+    text-align: right;
+    width: 100%;
+}
+
+.view, .visit{
+    display: inherit;
+    padding-left: 30px;
+}
+
+.absent {
+    display: none;
+}
+
+.present {
+    display: inherit;
+}
